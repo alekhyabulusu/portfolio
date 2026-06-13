@@ -7,6 +7,9 @@ import Journey from '@/components/Journey';
 import Certifications from '@/components/Certifications';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import AskAlekhya from '@/components/AskAlekhya';
+import CommandPalette from '@/components/CommandPalette';
+import InteractionEffects from '@/components/InteractionEffects';
 
 export default function Home() {
   return (
@@ -20,6 +23,9 @@ export default function Home() {
       <Certifications />
       <Contact />
       <Footer />
+      <AskAlekhya />
+      <CommandPalette />
+      <InteractionEffects />
     </>
   );
 }

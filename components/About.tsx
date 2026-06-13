@@ -1,5 +1,6 @@
 import SectionHeader from './SectionHeader';
 import FadeIn from './FadeIn';
+import CountUp from './CountUp';
 import { Target, FlaskConical } from './icons';
 
 const stats = [
@@ -38,7 +39,7 @@ export default function About() {
           </FadeIn>
           {stats.map((s, i) => (
             <FadeIn key={s.num} className={`about-card b-stat b-stat-${i + 1}`}>
-              <span className="num">{s.num}</span>
+              <CountUp value={s.num} className="num" />
               <span className="lbl">{s.lbl}</span>
             </FadeIn>
           ))}

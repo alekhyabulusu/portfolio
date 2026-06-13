@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Github, Linkedin, MailFilled, Instagram, Twitter, ChevronDown } from './icons';
+import RotatingTitle from './RotatingTitle';
 
 export default function Hero() {
   return (
@@ -13,7 +14,9 @@ export default function Hero() {
           <h1>
             Hi, I&apos;m <span>Alekhya</span>
           </h1>
-          <p className="hero-title">Data Scientist &amp; AI/ML Engineer</p>
+          <p className="hero-title">
+            <RotatingTitle titles={['Data Scientist', 'ML Engineer', 'RAG Architect', 'NLP Practitioner']} />
+          </p>
           <p className="hero-bio">
             Masters student at Northeastern university with an interest in building data driven
             solutions specializing in RAG architectures and scalable ML pipelines. I develop ML

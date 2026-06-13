@@ -64,6 +64,13 @@ export default function Nav() {
             </li>
           ))}
         </ul>
+        <button
+          className="cmdk-trigger"
+          onClick={() => window.dispatchEvent(new Event('open-cmdk'))}
+          aria-label="Open command palette"
+        >
+          <span className="cmdk-key">⌘</span>K
+        </button>
         <button className="mobile-menu" onClick={() => setMenuOpen((o) => !o)} aria-label="Toggle menu">
           {menuOpen ? '✕' : '☰'}
         </button>
