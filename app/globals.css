@@ -208,11 +208,11 @@ nav {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2.8rem, 6vw, 4.75rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.02;
   margin-bottom: 0.75rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
 }
 
 .hero h1 span {
@@ -355,7 +355,26 @@ section::before {
 }
 
 .section-header {
-  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 2.75rem;
+}
+
+.section-index {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--accent-dark);
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.section-heading {
+  padding-top: 0.35rem;
 }
 
 .section-label {
@@ -368,9 +387,46 @@ section::before {
 }
 
 .section-title {
-  font-size: 1.6rem;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
+}
+
+/* Bento grid (About + stats) */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  grid-auto-rows: minmax(118px, auto);
+}
+
+.b-bg { grid-column: 1 / 3; grid-row: 1 / 3; }
+.b-focus { grid-column: 3 / 5; grid-row: 1 / 2; }
+.b-stat-1 { grid-column: 3 / 4; grid-row: 2 / 3; }
+.b-stat-2 { grid-column: 4 / 5; grid-row: 2 / 3; }
+.b-stat-3 { grid-column: 1 / 3; grid-row: 3 / 4; }
+.b-stat-4 { grid-column: 3 / 5; grid-row: 3 / 4; }
+
+.b-stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.b-stat .num {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.b-stat .lbl {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-top: 0.45rem;
+  line-height: 1.4;
 }
 
 /* About */
@@ -421,6 +477,14 @@ section::before {
   grid-template-columns: repeat(3, 1fr);
   gap: 0.85rem;
 }
+
+.skills-bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+}
+
+.skills-bento .skill-wide { grid-column: span 2; }
 
 .skill-group {
   background: var(--bg-card);
@@ -599,6 +663,33 @@ section::before {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+}
+
+/* Featured (first) project spans two columns, image beside content */
+.projects-grid .featured {
+  grid-column: span 2;
+  flex-direction: row;
+}
+
+.projects-grid .featured .project-image {
+  width: 48%;
+  height: auto;
+  min-height: 300px;
+  border-bottom: none;
+  border-right: 1px solid var(--border);
+}
+
+.projects-grid .featured .project-content {
+  width: 52%;
+  justify-content: center;
+}
+
+.projects-grid .featured .project-title {
+  font-size: 1.15rem;
+}
+
+.projects-grid .featured .project-desc {
+  font-size: 0.88rem;
 }
 
 .project-card {
@@ -912,6 +1003,8 @@ footer span { color: var(--accent); }
 /* Responsive */
 @media (max-width: 1000px) {
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
+  .skills-bento { grid-template-columns: repeat(2, 1fr); }
+  .skills-bento .skill-wide { grid-column: span 2; }
 }
 
 @media (max-width: 900px) {
@@ -924,6 +1017,16 @@ footer span { color: var(--accent); }
   .about-grid, .projects-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* Bento collapses to two columns */
+  .bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(110px, auto); }
+  .b-bg, .b-focus, .b-stat-1, .b-stat-2, .b-stat-3, .b-stat-4 { grid-column: auto; grid-row: auto; }
+  .b-bg, .b-focus { grid-column: 1 / 3; }
+
+  /* Featured project stacks like the rest */
+  .projects-grid .featured { grid-column: span 1; flex-direction: column; }
+  .projects-grid .featured .project-image { width: 100%; height: 260px; border-right: none; border-bottom: 1px solid var(--border); }
+  .projects-grid .featured .project-content { width: 100%; }
 }
 
 @media (max-width: 640px) {
@@ -932,8 +1035,13 @@ footer span { color: var(--accent); }
   .nav-links.active { display: flex; }
   .nav-links li { padding: 0.7rem 0; }
   .mobile-menu { display: block; }
-  .hero h1 { font-size: 2.25rem; }
+  .hero h1 { font-size: 2.5rem; }
   .skills-grid { grid-template-columns: 1fr; }
+  .skills-bento { grid-template-columns: 1fr; }
+  .skills-bento .skill-wide { grid-column: auto; }
+  .bento { grid-template-columns: 1fr; }
+  .b-bg, .b-focus { grid-column: auto; }
+  .section-header { gap: 0.85rem; }
   .node-head { flex-direction: column; gap: 0.5rem; }
   .node-meta { text-align: left; }
   .form-row { grid-template-columns: 1fr; }

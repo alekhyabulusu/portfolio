@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import FadeIn from './FadeIn';
+import SectionHeader from './SectionHeader';
 
 const projects = [
   {
@@ -80,13 +81,10 @@ export default function Projects() {
   return (
     <section id="projects">
       <div className="container">
-        <FadeIn className="section-header">
-          <p className="section-label">Portfolio</p>
-          <h2 className="section-title">Featured Projects</h2>
-        </FadeIn>
+        <SectionHeader index="03" label="Portfolio" title="Featured Projects" />
         <div className="projects-grid">
-          {projects.map((project) => (
-            <FadeIn key={project.title} className="project-card">
+          {projects.map((project, i) => (
+            <FadeIn key={project.title} className={`project-card${i === 0 ? ' featured' : ''}`}>
               <div className="project-image">
                 <Image
                   src={project.image}

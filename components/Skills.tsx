@@ -1,3 +1,4 @@
+import SectionHeader from './SectionHeader';
 import FadeIn from './FadeIn';
 import { Code, Terminal, Cpu, Bot, Database, BarChart3 } from './icons';
 
@@ -18,19 +19,21 @@ const skillGroups = [
     tags: ['PyTorch', 'TensorFlow', 'Scikit-learn', 'Keras', 'SciPy', 'NumPy', 'Pandas', 'Gaussian Processes', 'MediaPipe'],
   },
   {
+    icon: <BarChart3 size={16} />,
+    title: 'Visualization & Analysis',
+    tags: ['Matplotlib', 'Seaborn', 'Plotly', 'ggplot2', 'Tableau', 'Statistical Analysis', 'Hypothesis Testing'],
+  },
+  {
     icon: <Bot size={16} />,
     title: 'NLP & AI Engineering',
     tags: ['LangChain', 'RAG', 'ChromaDB', 'Hugging Face', 'NLTK', 'Transformers', 'LLMs', 'Meta Llama', 'OpenAI API', 'Pinecone', 'RAGAS', 'Prompt Engineering', 'Agentic AI'],
+    wide: true,
   },
   {
     icon: <Database size={16} />,
     title: 'Data Engineering & Databases',
     tags: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB', 'Vector Databases', 'BeautifulSoup', 'ETL', 'Data Pipelines', 'Streamlit', 'FastAPI', 'Flask'],
-  },
-  {
-    icon: <BarChart3 size={16} />,
-    title: 'Visualization & Analysis',
-    tags: ['Matplotlib', 'Seaborn', 'Plotly', 'ggplot2', 'Tableau', 'Statistical Analysis', 'Hypothesis Testing'],
+    wide: true,
   },
 ];
 
@@ -38,13 +41,10 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="container">
-        <FadeIn className="section-header">
-          <p className="section-label">Technical</p>
-          <h2 className="section-title">Skills &amp; Tools</h2>
-        </FadeIn>
-        <div className="skills-grid">
+        <SectionHeader index="02" label="Technical" title="Skills & Tools" />
+        <div className="skills-bento">
           {skillGroups.map((group) => (
-            <FadeIn key={group.title} className="skill-group">
+            <FadeIn key={group.title} className={`skill-group${group.wide ? ' skill-wide' : ''}`}>
               <p className="skill-group-title">
                 {group.icon}
                 {group.title}

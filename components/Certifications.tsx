@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import SectionHeader from './SectionHeader';
 import { Code, BarChart3, Terminal, MessageCircle } from './icons';
 
 const certs = [
@@ -12,10 +13,7 @@ export default function Certifications() {
   return (
     <section id="certifications">
       <div className="container">
-        <FadeIn className="section-header">
-          <p className="section-label">Credentials</p>
-          <h2 className="section-title">Certifications</h2>
-        </FadeIn>
+        <SectionHeader index="05" label="Credentials" title="Certifications" />
         <div className="certs-grid">
           {certs.map((cert) => (
             <FadeIn key={cert.name} className="cert-card">

@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import SectionHeader from './SectionHeader';
 import { Briefcase, GraduationCap } from './icons';
 
 type Node = {
@@ -46,10 +47,7 @@ export default function Journey() {
   return (
     <section id="experience">
       <div className="container">
-        <FadeIn className="section-header">
-          <p className="section-label">Background</p>
-          <h2 className="section-title">Experience &amp; Education</h2>
-        </FadeIn>
+        <SectionHeader index="04" label="Background" title="Experience & Education" />
         <div className="timeline">
           {timeline.map((node, i) => (
             <FadeIn

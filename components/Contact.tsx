@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import SectionHeader from './SectionHeader';
 import ContactForm from './ContactForm';
 import { Mail, Phone, Linkedin, Github } from './icons';
 
@@ -6,10 +7,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container">
-        <FadeIn className="section-header">
-          <p className="section-label">Connect</p>
-          <h2 className="section-title">Get in Touch</h2>
-        </FadeIn>
+        <SectionHeader index="06" label="Connect" title="Get in Touch" />
         <div className="contact-grid">
           <FadeIn className="contact-info">
             <h3>Let&apos;s work together</h3>
