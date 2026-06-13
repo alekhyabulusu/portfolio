@@ -101,17 +101,67 @@ nav {
   transition: color 0.2s;
 }
 
+.nav-links a {
+  position: relative;
+}
+
 .nav-links a:hover { color: var(--accent); }
+
+.nav-links a.active { color: var(--accent); }
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent-light));
+  z-index: 1001;
+  will-change: transform;
+}
 
 .mobile-menu { display: none; background: none; border: none; color: var(--text); font-size: 1.25rem; cursor: pointer; }
 
 /* Hero */
 .hero {
-  min-height: 100vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   padding: 6rem 0 4rem;
   position: relative;
+}
+
+/* Scroll-down cue */
+.scroll-cue {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--text-muted);
+  z-index: 1;
+  transition: color 0.2s;
+  animation: cue-bounce 2s ease-in-out infinite;
+}
+
+.scroll-cue:hover { color: var(--accent); }
+
+@keyframes cue-bounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 8px); }
 }
 
 .hero::before {
@@ -358,54 +408,11 @@ section::before {
   line-height: 1.7;
 }
 
-/* Education */
-.edu-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.edu-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1.5rem;
-  padding: 1.35rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  transition: all 0.25s;
-}
-
-.edu-item:hover {
-  border-color: var(--border-light);
-}
-
-.edu-degree {
-  font-weight: 600;
-  font-size: 0.95rem;
-  margin-bottom: 0.2rem;
-}
-
-.edu-school {
-  color: var(--accent);
-  font-size: 0.88rem;
-  margin-bottom: 0.4rem;
-}
-
+/* Education detail text (used inside timeline nodes) */
 .edu-details {
   color: var(--text-secondary);
   font-size: 0.82rem;
   line-height: 1.55;
-}
-
-.edu-date {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  white-space: nowrap;
-  padding: 0.3rem 0.65rem;
-  background: var(--bg-elevated);
-  border-radius: 6px;
-  height: fit-content;
 }
 
 /* Skills */
@@ -456,20 +463,88 @@ section::before {
   background: var(--accent-glow);
 }
 
-/* Experience */
-.exp-card {
+/* Experience & Education timeline */
+.timeline {
+  position: relative;
+  padding-left: 2.25rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark) 70%, transparent);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.25rem;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  margin-left: 1px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px var(--bg), 0 0 10px var(--accent-glow);
+}
+
+.node-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 1.5rem;
+  padding: 1.4rem;
+  transition: all 0.25s;
 }
 
-.exp-header {
+.node-card:hover {
+  border-color: var(--border-light);
+  transform: translateX(3px);
+}
+
+.node-head {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
   gap: 1rem;
+}
+
+.node-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 0.55rem;
+}
+
+.node-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.node-card .exp-list:not(:first-child),
+.node-card .edu-details {
+  margin-top: 0.2rem;
 }
 
 .exp-role {
@@ -481,11 +556,6 @@ section::before {
 .exp-company {
   color: var(--accent);
   font-size: 0.92rem;
-}
-
-.exp-meta {
-  text-align: right;
-  flex-shrink: 0;
 }
 
 .exp-date {
@@ -806,6 +876,27 @@ footer::before {
 
 footer span { color: var(--accent); }
 
+/* Icon accents */
+.about-card h3 svg,
+.skill-group-title svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.cert-icon {
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+}
+
+.contact-icon {
+  color: var(--accent);
+  display: inline-flex;
+  align-items: center;
+}
+
+.node-type svg { flex-shrink: 0; }
+
 /* Animations */
 .fade-in {
   opacity: 0;
@@ -843,9 +934,7 @@ footer span { color: var(--accent); }
   .mobile-menu { display: block; }
   .hero h1 { font-size: 2.25rem; }
   .skills-grid { grid-template-columns: 1fr; }
-  .edu-item { grid-template-columns: 1fr; }
-  .edu-date { width: fit-content; }
-  .exp-header { flex-direction: column; }
-  .exp-meta { text-align: left; }
+  .node-head { flex-direction: column; gap: 0.5rem; }
+  .node-meta { text-align: left; }
   .form-row { grid-template-columns: 1fr; }
 }

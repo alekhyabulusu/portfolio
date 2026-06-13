@@ -1,10 +1,11 @@
 import FadeIn from './FadeIn';
+import { Code, BarChart3, Terminal, MessageCircle } from './icons';
 
 const certs = [
-  { icon: '🐍', name: 'Python & Data Science', issuer: 'UNP' },
-  { icon: '📊', name: 'Data Analysis with R', issuer: 'Google' },
-  { icon: '💻', name: 'Python 101', issuer: 'IBM' },
-  { icon: '🗣️', name: 'NLP', issuer: 'Udemy' },
+  { icon: <Code size={26} />, name: 'Python & Data Science', issuer: 'UNP' },
+  { icon: <BarChart3 size={26} />, name: 'Data Analysis with R', issuer: 'Google' },
+  { icon: <Terminal size={26} />, name: 'Python 101', issuer: 'IBM' },
+  { icon: <MessageCircle size={26} />, name: 'NLP', issuer: 'Udemy' },
 ];
 
 export default function Certifications() {

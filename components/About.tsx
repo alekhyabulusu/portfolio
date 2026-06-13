@@ -1,4 +1,5 @@
 import FadeIn from './FadeIn';
+import { Target, FlaskConical } from './icons';
 
 export default function About() {
   return (
@@ -10,7 +11,7 @@ export default function About() {
         </FadeIn>
         <div className="about-grid">
           <FadeIn className="about-card">
-            <h3>🎯 Background</h3>
+            <h3><Target size={18} /> Background</h3>
             <p>
               Currently pursuing my MS in Data Science at Northeastern, building on a BS in the same
               field. I&apos;m passionate about building end-to-end solutions from exploratory
@@ -19,7 +20,7 @@ export default function About() {
             </p>
           </FadeIn>
           <FadeIn className="about-card">
-            <h3>🔬 Current Focus</h3>
+            <h3><FlaskConical size={18} /> Current Focus</h3>
             <p>
               Graduate student at Northeastern University developing a health and fitness app.
               Recently built a RAG-powered QA system for coursework with 8 different tutor personas

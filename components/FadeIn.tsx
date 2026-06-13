@@ -5,9 +5,10 @@ interface FadeInProps {
   children: ReactNode;
   className?: string;
   style?: React.CSSProperties;
+  id?: string;
 }
 
-export default function FadeIn({ children, className = '', style }: FadeInProps) {
+export default function FadeIn({ children, className = '', style, id }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function FadeIn({ children, className = '', style }: FadeInProps)
   }, []);
 
   return (
-    <div ref={ref} className={`fade-in${className ? ' ' + className : ''}`} style={style}>
+    <div ref={ref} id={id} className={`fade-in${className ? ' ' + className : ''}`} style={style}>
       {children}
     </div>
   );

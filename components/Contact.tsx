@@ -1,5 +1,6 @@
 import FadeIn from './FadeIn';
 import ContactForm from './ContactForm';
+import { Mail, Phone, Linkedin, Github } from './icons';
 
 export default function Contact() {
   return (
@@ -18,14 +19,14 @@ export default function Contact() {
             </p>
             <div className="contact-list">
               <a href="mailto:alekhyabulusu09@yahoo.com" className="contact-item">
-                <span className="contact-icon">✉️</span>
+                <span className="contact-icon"><Mail size={18} /></span>
                 <div>
                   <p className="contact-label">Email</p>
                   <p className="contact-value">alekhyabulusu09@yahoo.com</p>
                 </div>
               </a>
               <a href="tel:+16172384173" className="contact-item">
-                <span className="contact-icon">📞</span>
+                <span className="contact-icon"><Phone size={18} /></span>
                 <div>
                   <p className="contact-label">Phone</p>
                   <p className="contact-value">(617) 238-4173</p>
@@ -37,7 +38,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="contact-icon">💼</span>
+                <span className="contact-icon"><Linkedin size={18} /></span>
                 <div>
                   <p className="contact-label">LinkedIn</p>
                   <p className="contact-value">linkedin.com/in/alekhyabulusu</p>
@@ -49,7 +50,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <span className="contact-icon">⌨️</span>
+                <span className="contact-icon"><Github size={18} /></span>
                 <div>
                   <p className="contact-label">GitHub</p>
                   <p className="contact-value">github.com/alekhyabulusu</p>
