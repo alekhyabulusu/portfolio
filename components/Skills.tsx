@@ -4,14 +4,19 @@ import { Code, Terminal, Cpu, Bot, Database, BarChart3 } from './icons';
 
 const skillGroups = [
   {
-    icon: <Code size={16} />,
-    title: 'Programming & Frameworks',
-    tags: ['Python', 'R', 'Bash', 'SQL', 'CUDA', 'FastAPI', 'TensorFlow', 'PyTorch'],
+    icon: <Bot size={16} />,
+    title: 'NLP & AI Engineering',
+    tags: ['NLTK', 'Hugging Face', 'Transformers', 'LangChain', 'LangGraph', 'LLMs', 'RAG', 'Meta Llama', 'OpenAI API', 'ChromaDB', 'Pinecone', 'RAGAS', 'Prompt Engineering', 'LlamaIndex', 'Agentic AI', 'LoRA', 'vLLM', 'spaCy'],
   },
   {
     icon: <Terminal size={16} />,
     title: 'Developer Tools & Web Dev',
     tags: ['Jupyter Notebook', 'Google Colab', 'R Studio', 'Git', 'Github', 'VS Code', 'GoormIDE', 'OneCompiler', 'Claude Code', 'Cursor', 'HTML', 'React.js', 'Node.js', 'Vercel', 'CI/CD', 'LaTeX', 'Markdown'],
+  },
+  {
+    icon: <Database size={16} />,
+    title: 'Data Engineering & Databases',
+    tags: ['Data Pipelines', 'PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Vector Databases', 'BeautifulSoup', 'Streamlit', 'FastAPI', 'Flask', 'DuckDB', 'ETL', 'Weaviate'],
   },
   {
     icon: <Cpu size={16} />,
@@ -24,14 +29,9 @@ const skillGroups = [
     tags: ['Matplotlib', 'Seaborn', 'Plotly', 'ggplot2', 'Tableau', 'Statistical Analysis', 'Hypothesis Testing', 'A/B Testing', 'Regression Analysis', 'Folium'],
   },
   {
-    icon: <Bot size={16} />,
-    title: 'NLP & AI Engineering',
-    tags: ['NLTK', 'Hugging Face', 'Transformers', 'LangChain', 'LangGraph', 'LLMs', 'RAG', 'Meta Llama', 'OpenAI API', 'ChromaDB', 'Pinecone', 'RAGAS', 'Prompt Engineering', 'LlamaIndex', 'Agentic AI', 'LoRA', 'vLLM', 'spaCy'],
-  },
-  {
-    icon: <Database size={16} />,
-    title: 'Data Engineering & Databases',
-    tags: ['Data Pipelines', 'PostgreSQL', 'MySQL', 'MongoDB', 'SQLite', 'Vector Databases', 'BeautifulSoup', 'Streamlit', 'FastAPI', 'Flask', 'DuckDB', 'ETL', 'Weaviate'],
+    icon: <Code size={16} />,
+    title: 'Programming & Frameworks',
+    tags: ['Python', 'R', 'Bash', 'SQL', 'CUDA', 'FastAPI', 'TensorFlow', 'PyTorch'],
   },
 ];
 
