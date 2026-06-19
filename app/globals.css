@@ -919,6 +919,13 @@ textarea.form-input {
   box-shadow: 0 4px 20px var(--accent-glow);
 }
 
+.form-note {
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  text-align: center;
+}
+
 /* Footer */
 footer {
   padding: 1.75rem 0;
