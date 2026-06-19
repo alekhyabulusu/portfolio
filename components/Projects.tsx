@@ -83,8 +83,8 @@ export default function Projects() {
       <div className="container">
         <SectionHeader index="03" label="Portfolio" title="Featured Projects" />
         <div className="projects-grid">
-          {projects.map((project, i) => (
-            <FadeIn key={project.title} className={`project-card${i === 0 ? ' featured' : ''}`}>
+          {projects.map((project) => (
+            <FadeIn key={project.title} className="project-card">
               <div className="project-image">
                 <Image
                   src={project.image}
