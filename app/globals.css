@@ -1370,3 +1370,16 @@ footer span { color: var(--accent); }
   .aa-fab, .aa-fab:hover { transition: none; transform: none; }
 }
 
+/* Widen the content on large monitors so it doesn't float in a narrow column */
+@media (min-width: 1500px) {
+  .container { max-width: 1200px; }
+}
+
+@media (min-width: 1800px) {
+  .container { max-width: 1340px; }
+}
+
+@media (min-width: 2200px) {
+  .container { max-width: 1480px; }
+}
+
