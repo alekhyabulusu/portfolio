@@ -2,10 +2,10 @@
 import { FormEvent, useState } from 'react';
 
 const TO = 'alekhyabulusu09@yahoo.com';
-// Free Web3Forms access key tied to alekhyabulusu09@yahoo.com.
-// Get one at https://web3forms.com (enter that email) and paste it here to enable
-// direct in-page sending. Until then, the form falls back to a pre-filled email.
-const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? '';
+// FormSubmit needs no API key or signup — it delivers submissions to this address.
+// The very first submission triggers a one-time confirmation email to TO; click the
+// link in it once and all future messages are delivered automatically.
+const ENDPOINT = `https://formsubmit.co/ajax/${TO}`;
 
 export default function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -15,33 +15,27 @@ export default function ContactForm() {
     const form = e.currentTarget;
     const data = new FormData(form);
     const name = ((data.get('name') as string) || '').trim();
+    const email = ((data.get('email') as string) || '').trim();
     const subject = ((data.get('subject') as string) || '').trim();
-
-    if (!WEB3FORMS_KEY) {
-      const email = ((data.get('email') as string) || '').trim();
-      const message = ((data.get('message') as string) || '').trim();
-      const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-      window.location.href = `mailto:${TO}?subject=${encodeURIComponent(
-        subject || `Portfolio message from ${name || 'a visitor'}`
-      )}&body=${encodeURIComponent(body)}`;
-      setStatus('sent');
-      form.reset();
-      setTimeout(() => setStatus('idle'), 6000);
-      return;
-    }
+    const message = ((data.get('message') as string) || '').trim();
 
     setStatus('sending');
-    data.append('access_key', WEB3FORMS_KEY);
-    data.append('subject', subject || `Portfolio message from ${name || 'a visitor'}`);
-    data.append('from_name', "Alekhya's Portfolio");
     try {
-      const res = await fetch('https://api.web3forms.com/submit', {
+      const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: data,
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: subject || `Portfolio message from ${name || 'a visitor'}`,
+          _replyto: email,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
       const json = await res.json();
-      if (json.success) {
+      if (json.success === 'true' || json.success === true) {
         setStatus('sent');
         form.reset();
       } else {
@@ -50,7 +44,7 @@ export default function ContactForm() {
     } catch {
       setStatus('error');
     }
-    setTimeout(() => setStatus('idle'), 6000);
+    setTimeout(() => setStatus('idle'), 7000);
   };
 
   return (
@@ -70,7 +64,7 @@ export default function ContactForm() {
       </button>
       {status === 'sent' && (
         <p className="form-note" role="status">
-          Thanks! Your message is on its way to Alekhya.
+          Thanks! Your message has been sent to Alekhya.
         </p>
       )}
       {status === 'error' && (
