@@ -926,6 +926,10 @@ textarea.form-input {
   text-align: center;
 }
 
+.form-note-error {
+  color: #d98b6b;
+}
+
 /* Footer */
 footer {
   padding: 1.75rem 0;
