@@ -28,7 +28,7 @@ export default function CommandPalette() {
     {
       label: 'View Resume',
       hint: 'Open',
-      action: link('https://drive.google.com/file/d/1OowbWFVx3RX6rOYKAsfGkOhLBuK4n6Gu/view'),
+      action: link('https://drive.google.com/file/d/18UMVCoEegXAwAUT_pvYaYSPUksIq_m0W/view?usp=sharing'),
     },
     {
       label: 'Email Alekhya',

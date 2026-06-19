@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Github, Linkedin, MailFilled, Instagram, Twitter, ChevronDown } from './icons';
+import { Github, Linkedin, MailFilled, Twitter, ChevronDown } from './icons';
 import RotatingTitle from './RotatingTitle';
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a
-              href="https://drive.google.com/file/d/1OowbWFVx3RX6rOYKAsfGkOhLBuK4n6Gu/view"
+              href="https://drive.google.com/file/d/18UMVCoEegXAwAUT_pvYaYSPUksIq_m0W/view?usp=sharing"
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
@@ -58,16 +58,6 @@ export default function Hero() {
             </a>
             <a href="mailto:alekhyabulusu09@yahoo.com" className="social-btn" aria-label="Email" title="Email">
               <MailFilled />
-            </a>
-            <a
-              href="https://instagram.com/alekhyabulusu"
-              className="social-btn"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              title="Instagram"
-            >
-              <Instagram />
             </a>
             <a
               href="https://twitter.com/iamlazyidc"

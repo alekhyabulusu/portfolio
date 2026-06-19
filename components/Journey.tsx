@@ -16,6 +16,17 @@ type Node = {
 const timeline: Node[] = [
   {
     kind: 'Experience',
+    title: 'AI/ML Engineer Intern',
+    org: 'IpserLab',
+    date: 'June 2026 – Aug 2026',
+    bullets: [
+      'Implementing OCR pipeline to extract grocery items from scanned receipts, automating inventory updates and expiration tracking',
+      'Building recommendation system for meal suggestions based on available ingredients, dietary preferences, and nutritional goals',
+      'Architecting full-stack application with React + TypeScript frontend and FastAPI backend, integrating ML pipelines for real-time suggestions',
+    ],
+  },
+  {
+    kind: 'Experience',
     title: 'Data Science Research Intern',
     org: 'UNP',
     date: 'Nov 2021 – Apr 2022',

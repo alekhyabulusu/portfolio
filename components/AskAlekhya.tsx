@@ -47,7 +47,7 @@ const KB: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['skill', 'skills', 'tech', 'stack', 'language', 'languages', 'tool', 'tools', 'python', 'know', 'technology', 'technologies'],
     answer:
-      "Her core stack: Python, SQL, R; PyTorch, TensorFlow, scikit-learn; LangChain, RAG, Hugging Face and LLMs for NLP/AI engineering; PostgreSQL, MongoDB and vector DBs; plus Streamlit, FastAPI and Flask for shipping.",
+      "Her core stack: Python, SQL, R, CUDA; PyTorch, TensorFlow, scikit-learn, XGBoost; LangChain, LangGraph, LlamaIndex, RAG, Hugging Face, LoRA and vLLM for NLP/AI engineering; PostgreSQL, MongoDB, and vector DBs (Pinecone, ChromaDB, Weaviate); plus full-stack React + TypeScript, FastAPI, Flask, and Streamlit for shipping.",
   },
   {
     keywords: ['education', 'school', 'university', 'northeastern', 'degree', 'gpa', 'study', 'master', 'masters', 'graduate', 'grad'],
@@ -55,9 +55,9 @@ const KB: { keywords: string[]; answer: string }[] = [
       "Alekhya is pursuing an MS in Data Science at Northeastern University, Boston (GPA 3.7, graduating May 2027), after a BS in Data Science (GPA 9.39/10). Coursework: ML & Pattern Recognition, LLMs, Deep Learning, and Data Mining.",
   },
   {
-    keywords: ['experience', 'unp', 'clinician', 'discharge', 'research', 'work history', 'background'],
+    keywords: ['experience', 'ipserlab', 'ipser', 'internship', 'current', 'now', 'unp', 'clinician', 'discharge', 'research', 'work history', 'background'],
     answer:
-      "She was a Data Science Research Intern at UNP (Nov 2021–Apr 2022), building a predictive model for clinical discharge decisions — 83% accuracy using logistic regression with cross-validation and hyperparameter tuning.",
+      "Right now Alekhya is an AI/ML Engineer Intern at IpserLab (June–Aug 2026): building an OCR pipeline that extracts grocery items from receipts for automated inventory & expiry tracking, a meal-recommendation system over available ingredients and dietary goals, and a full-stack React + TypeScript / FastAPI app with real-time ML. Earlier she was a Data Science Research Intern at UNP (2021–22), reaching 83% accuracy on a clinical discharge model.",
   },
   {
     keywords: ['contact', 'email', 'reach', 'linkedin', 'github', 'connect', 'get in touch', 'phone', 'message'],
