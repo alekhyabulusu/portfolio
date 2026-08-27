@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Github, Linkedin, MailFilled, Twitter, ChevronDown } from './icons';
 import RotatingTitle from './RotatingTitle';
+import { RESUME_URL } from '@/app/site';
 
 export default function Hero() {
   return (
@@ -24,7 +25,7 @@ export default function Hero() {
           </p>
           <div className="hero-actions">
             <a
-              href="https://drive.google.com/file/d/18UMVCoEegXAwAUT_pvYaYSPUksIq_m0W/view?usp=sharing"
+              href={RESUME_URL}
               className="btn btn-primary"
               target="_blank"
               rel="noopener noreferrer"
