@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState } from 'react';
+import { RESUME_URL } from '@/app/site';
 
 type Item = { label: string; hint: string; action: () => void };
 
@@ -28,7 +29,7 @@ export default function CommandPalette() {
     {
       label: 'View Resume',
       hint: 'Open',
-      action: link('https://drive.google.com/file/d/18UMVCoEegXAwAUT_pvYaYSPUksIq_m0W/view?usp=sharing'),
+      action: link(RESUME_URL),
     },
     {
       label: 'Email Alekhya',
