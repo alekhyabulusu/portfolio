@@ -6,7 +6,7 @@ import { Target, FlaskConical } from './icons';
 const stats = [
   { num: '3.55', lbl: 'Grad GPA · Northeastern' },
   { num: '8+', lbl: 'Featured projects' },
-  { num: '41%', lbl: 'Lower calibration error · AURORA' },
+  { num: '88.7%', lbl: 'Injury-risk accuracy · Form Assessment' },
   { num: '0.85', lbl: 'RAGAS faithfulness · Course Companion' },
 ];
 

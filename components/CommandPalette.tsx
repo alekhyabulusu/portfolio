@@ -23,6 +23,7 @@ export default function CommandPalette() {
     { label: 'About', hint: 'Section', action: go('about') },
     { label: 'Skills', hint: 'Section', action: go('skills') },
     { label: 'Projects', hint: 'Section', action: go('projects') },
+    { label: 'Publications', hint: 'Section', action: go('publications') },
     { label: 'Experience & Education', hint: 'Section', action: go('experience') },
     { label: 'Certifications', hint: 'Section', action: go('certifications') },
     { label: 'Contact', hint: 'Section', action: go('contact') },

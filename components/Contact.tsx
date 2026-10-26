@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <div className="container">
-        <SectionHeader index="06" label="Connect" title="Get in Touch" />
+        <SectionHeader index="07" label="Connect" title="Get in Touch" />
         <div className="contact-grid">
           <FadeIn className="contact-info">
             <h3>Let&apos;s work together</h3>

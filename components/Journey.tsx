@@ -70,7 +70,7 @@ export default function Journey() {
   return (
     <section id="experience">
       <div className="container">
-        <SectionHeader index="04" label="Background" title="Experience & Education" />
+        <SectionHeader index="05" label="Background" title="Experience & Education" />
         <div className="timeline">
           {timeline.map((node, i) => (
             <FadeIn

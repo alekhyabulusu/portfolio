@@ -13,7 +13,7 @@ export default function Certifications() {
   return (
     <section id="certifications">
       <div className="container">
-        <SectionHeader index="05" label="Credentials" title="Certifications" />
+        <SectionHeader index="06" label="Credentials" title="Certifications" />
         <div className="certs-grid">
           {certs.map((cert) => (
             <FadeIn key={cert.name} className="cert-card">

@@ -15,9 +15,9 @@ const KB: { keywords: string[]; answer: string }[] = [
       "Alekhya has deep RAG experience. Her Course Companion is a full RAG QA system over course material using LangChain + Llama 3.1 — with semantic chunking, query classification, and 8 adaptive tutor personas. She evaluated it with RAGAS at 0.85 faithfulness and 0.82 answer relevance.",
   },
   {
-    keywords: ['aurora', 'gaussian', 'gp', 'uncertainty', 'calibration', 'kernel'],
+    keywords: ['aurora', 'gaussian', 'gp', 'uncertainty', 'calibration', 'kernel', 'paper', 'papers', 'publication', 'publications', 'preprint', 'published'],
     answer:
-      "AURORA is her uncertainty-aware Gaussian Process framework. It identifies high-importance regions via uncertainty and density analysis, achieving a 41% average improvement in Expected Calibration Error with a 3–5x speedup over full exact GP inference.",
+      "AURORA is a region-aware Gaussian Process approximation she worked on: it uses uncertainty and data density to decide where to run exact GP inference and where cheap approximations will do. An audit found the original report's calibration gain came from a units bug, and once corrected AURORA underperforms the exact GP. Her corrected paper with Kameswara Sai Srikar Manda, \"Predictive Variance Decides: Region-Aware Gaussian Processes Should Adapt the Noise, Not the Approximation\", is headed to arXiv.",
   },
   {
     keywords: ['salescope', 'sales', 'dashboard', 'walmart', 'analytics'],

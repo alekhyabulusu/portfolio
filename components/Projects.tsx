@@ -6,7 +6,7 @@ const projects = [
   {
     title: 'AURORA: Uncertainty-Aware GP Framework',
     description:
-      'A region-aware Gaussian Process approximation method that identifies high-importance regions through uncertainty and density analysis. Achieves 41% average improvement in Expected Calibration Error (ECE) with 3-5x speedup over full exact GP inference.',
+      'A region-aware Gaussian Process approximation method that identifies high-importance regions through uncertainty and density analysis, applying exact GP inference there and cheap approximations elsewhere. An audit later found its calibration gain came from a units bug; the corrected study, Predictive Variance Decides, is listed under Publications.',
     tags: ['Gaussian Processes', 'SciPy', 'k-NN', 'Kernel Methods', 'Python'],
     image: 'https://uploads.onecompiler.io/4498vsmkh/44rq5azx7/aurora.jpeg',
     imageAlt: 'AURORA Project',

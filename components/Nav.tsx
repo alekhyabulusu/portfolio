@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 
-const navSections = ['about', 'skills', 'projects', 'experience', 'education', 'contact'] as const;
+const navSections = ['about', 'skills', 'projects', 'publications', 'experience', 'education', 'contact'] as const;
 
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
