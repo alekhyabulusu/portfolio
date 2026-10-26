@@ -1,12 +1,12 @@
 import FadeIn from './FadeIn';
 import SectionHeader from './SectionHeader';
-import { Code, BarChart3, Terminal, MessageCircle } from './icons';
+import { Bot, BarChart3, Terminal, MessageCircle } from './icons';
 
 const certs = [
-  { icon: <Code size={26} />, name: 'Python & Data Science', issuer: 'UNP' },
-  { icon: <BarChart3 size={26} />, name: 'Data Analysis with R', issuer: 'Google' },
-  { icon: <Terminal size={26} />, name: 'Python 101', issuer: 'IBM' },
-  { icon: <MessageCircle size={26} />, name: 'NLP', issuer: 'Udemy' },
+  { icon: <Bot size={26} />, name: 'Model Context Protocol Advanced Topics', issuer: 'Anthropic' },
+  { icon: <BarChart3 size={26} />, name: 'Data Analysis with R Programming', issuer: 'Google' },
+  { icon: <Terminal size={26} />, name: 'Python 101 for Data Science', issuer: 'IBM' },
+  { icon: <MessageCircle size={26} />, name: 'Natural Language Processing', issuer: 'Udemy' },
 ];
 
 export default function Certifications() {

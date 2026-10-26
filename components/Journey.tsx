@@ -16,6 +16,18 @@ type Node = {
 const timeline: Node[] = [
   {
     kind: 'Experience',
+    title: 'Graduate Teaching Assistant',
+    org: 'Northeastern University · DA5030: Intro to Machine Learning & Data Mining',
+    date: 'Sept 2026 – Present',
+    loc: 'Boston, MA',
+    bullets: [
+      'Conducting teaching sessions on ML in R: kNN, Naïve Bayes, decision trees, regression, ensembles, neural nets, and clustering',
+      'Guiding students through end-to-end ML projects; holding office hours to help debug R code and evaluate models',
+      'Grading assignments and practicums, reviewing project proposals and reports, and creating R notebooks for practice',
+    ],
+  },
+  {
+    kind: 'Experience',
     title: 'AI/ML Engineer Intern',
     org: 'IpserLab',
     date: 'June 2026 – Aug 2026',
@@ -42,8 +54,8 @@ const timeline: Node[] = [
     anchor: 'education',
     title: 'Master of Science in Data Science',
     org: 'Northeastern University, Boston, MA',
-    date: 'May 2027',
-    details: 'CGPA: 3.7/4 • Algorithms, ML & Pattern Recognition, LLMs, Deep Learning, Data Mining',
+    date: 'Expected Dec 2026',
+    details: 'CGPA: 3.55/4 • Algorithms, ML & Pattern Recognition, LLMs, Deep Learning, Data Mining',
   },
   {
     kind: 'Education',

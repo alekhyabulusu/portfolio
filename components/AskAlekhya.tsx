@@ -5,9 +5,9 @@ type Msg = { role: 'user' | 'bot'; text: string };
 
 const KB: { keywords: string[]; answer: string }[] = [
   {
-    keywords: ['open', 'available', 'hiring', 'co-op', 'coop', 'internship', 'intern', 'opportunity', 'opportunities', 'looking', 'recruit', 'job', 'hire'],
+    keywords: ['open', 'available', 'hiring', 'co-op', 'coop', 'internship', 'intern', 'opportunity', 'opportunities', 'looking', 'recruit', 'job', 'hire', 'full-time', 'full time', 'new grad', 'role', 'roles'],
     answer:
-      "Yes — Alekhya is actively open to co-op and internship roles in data science and ML engineering. The quickest way to reach her is email (alekhyabulusu09@yahoo.com) or LinkedIn (linkedin.com/in/alekhyabulusu).",
+      "Yes — Alekhya graduates in Dec 2026 and is looking for new grad full-time roles in data science and ML engineering. The quickest way to reach her is email (alekhyabulusu09@yahoo.com) or LinkedIn (linkedin.com/in/alekhyabulusu).",
   },
   {
     keywords: ['rag', 'langchain', 'retrieval', 'course companion', 'companion', 'ragas', 'tutor', 'qa system'],
@@ -52,12 +52,12 @@ const KB: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['education', 'school', 'university', 'northeastern', 'degree', 'gpa', 'study', 'master', 'masters', 'graduate', 'grad'],
     answer:
-      "Alekhya is pursuing an MS in Data Science at Northeastern University, Boston (GPA 3.7, graduating May 2027), after a BS in Data Science (GPA 9.39/10). Coursework: ML & Pattern Recognition, LLMs, Deep Learning, and Data Mining.",
+      "Alekhya is pursuing an MS in Data Science at Northeastern University, Boston (GPA 3.55, graduating Dec 2026), after a BS in Data Science (GPA 9.39/10). Coursework: ML & Pattern Recognition, LLMs, Deep Learning, and Data Mining.",
   },
   {
-    keywords: ['experience', 'ipserlab', 'ipser', 'internship', 'current', 'now', 'unp', 'clinician', 'discharge', 'research', 'work history', 'background'],
+    keywords: ['experience', 'ipserlab', 'ipser', 'internship', 'current', 'now', 'unp', 'clinician', 'discharge', 'research', 'work history', 'background', 'teaching', 'ta', 'da5030'],
     answer:
-      "Right now Alekhya is an AI/ML Engineer Intern at IpserLab (June–Aug 2026): building an OCR pipeline that extracts grocery items from receipts for automated inventory & expiry tracking, a meal-recommendation system over available ingredients and dietary goals, and a full-stack React + TypeScript / FastAPI app with real-time ML. Earlier she was a Data Science Research Intern at UNP (2021–22), reaching 83% accuracy on a clinical discharge model.",
+      "Right now Alekhya is a Graduate Teaching Assistant at Northeastern for DA5030: Intro to Machine Learning & Data Mining (Sept 2026–present), leading R-based ML sessions, holding office hours, and grading projects. Before that she was an AI/ML Engineer Intern at IpserLab (June–Aug 2026): building an OCR pipeline that extracts grocery items from receipts for automated inventory & expiry tracking, a meal-recommendation system over available ingredients and dietary goals, and a full-stack React + TypeScript / FastAPI app with real-time ML. Earlier she was a Data Science Research Intern at UNP (2021–22), reaching 83% accuracy on a clinical discharge model.",
   },
   {
     keywords: ['contact', 'email', 'reach', 'linkedin', 'github', 'connect', 'get in touch', 'phone', 'message'],
@@ -77,7 +77,7 @@ const KB: { keywords: string[]; answer: string }[] = [
   {
     keywords: ['hello', 'hey there', 'hi there', 'greetings'],
     answer:
-      "Hi! I'm Alekhya's assistant. Ask me about her projects, skills, experience — or whether she's open to co-ops.",
+      "Hi! I'm Alekhya's assistant. Ask me about her projects, skills, experience — or whether she's open to full-time roles.",
   },
   {
     keywords: ['thank', 'thanks', 'thx'],
@@ -89,7 +89,7 @@ const FALLBACK =
   "Good question! I can tell you about Alekhya's projects (AURORA, Course Companion, Salescope…), her skills, education, experience, or how to get in touch. Try one of the suggestions below.";
 
 const SUGGESTIONS = [
-  'Is she open to co-ops?',
+  'Is she open to full-time roles?',
   'Tell me about AURORA',
   "What's her RAG experience?",
   "What's her tech stack?",
@@ -145,7 +145,7 @@ export default function AskAlekhya() {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: 'bot',
-      text: "Hi! I'm Alekhya's assistant. Ask me about her projects, skills, experience — or whether she's open to co-ops.",
+      text: "Hi! I'm Alekhya's assistant. Ask me about her projects, skills, experience — or whether she's open to full-time roles.",
     },
   ]);
   const [typing, setTyping] = useState(false);
