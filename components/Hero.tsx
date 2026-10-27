@@ -78,7 +78,7 @@ export default function Hero() {
             <div className="avatar">
               <div className="avatar-inner">
                 <Image
-                  src="https://uploads.onecompiler.io/4498vsmkh/44rq5azx7/IMG_3142.jpeg"
+                  src="/profile.jpg"
                   alt="Alekhya Bulusu"
                   fill
                   style={{ objectFit: 'cover' }}
